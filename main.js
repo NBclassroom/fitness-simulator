@@ -5,11 +5,11 @@ setInterval(stop, 10000);
 setInterval(position, 250);
 
 function start(){
-  send('http://localhost:9001/api/runs/123ABC/start');
+  send('http://localhost:9002/api/runs/123ABC/start');
 }
 
 function stop(){
-  send('http://localhost:9001/api/runs/123ABC/stop');
+  send('http://localhost:9002/api/runs/123ABC/stop');
 }
 
 function position(){
@@ -17,7 +17,7 @@ function position(){
   const longitude = Math.random() * 180;
   const altitude = Math.random() * 5000;
   const current = new Date();
-  send('http://localhost:9001/api/positions/123ABC', {latitude, longitude, altitude, current});
+  send('http://localhost:9002/api/positions/123ABC', {latitude, longitude, altitude, current});
 }
 
 function send(url, body){
